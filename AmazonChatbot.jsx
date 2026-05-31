@@ -1,4 +1,4 @@
-{ useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const STOP_WORDS = new Set([
   "a","an","the","is","it","in","on","at","to","for","of","and","or","but",
@@ -18,7 +18,7 @@ function tokenize(text) {
 function buildTF(tokens) {
   const tf = {};
   tokens.forEach((t) => (tf[t] = (tf[t] || 0) + 1));
-  const len = tokens.length || 1;import
+  const len = tokens.length || 1;
   Object.keys(tf).forEach((k) => (tf[k] /= len));
   return tf;
 }
